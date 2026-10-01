@@ -44,7 +44,7 @@ async function getActiveProxy() {
   let selectedProxy;
   do {
     selectedProxy = listProxy[Math.floor(Math.random() * listProxy.length)].proxy;
-    const response = await fetch('https://3.ipcfinfo.workers.dev/cek?ip=' + selectedProxy);
+    const response = await fetch('https://3.ipcfinfo.workers.dev/cek?ip='+selectedProxy);
     const data = await response.json();
     if (data.proxyStatus === 'ACTIVE') {
       return selectedProxy;
