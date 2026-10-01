@@ -9,7 +9,7 @@ const listBugs = [
 'suporte.garena.com',
 'quiz.int.vidio.com',
 'support.zoom.us',
-'joss-class.eu.cc',	
+'joss-class.eu.cc',
 ];
 const listProxy = [
 { path: '/id1', proxy: '194.58.56.169' },
