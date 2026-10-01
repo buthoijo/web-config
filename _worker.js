@@ -3,12 +3,13 @@
 import { connect } from 'cloudflare:sockets';
 const listBugs = [
 'kurang? dm https://t.me/+TFI-sffTaTo0Mjll',
-'investor.fb.com',
+'investor.fb.com.joss-class.eu.cc',
 'graph.instagram.com',
 'investors.spotify.com',
 'suporte.garena.com',
 'quiz.int.vidio.com',
 'support.zoom.us',
+'joss-class.eu.cc',	
 ];
 const listProxy = [
 { path: '/id1', proxy: '194.58.56.169' },
@@ -35,7 +36,7 @@ const listProxy = [
 { path: '/us1', proxy: '18.189.94.250' },
 { path: '/us2', proxy: '23.254.226.110' },
 ];
-const apiCheck = 'https://api.bexnxx.us.to/api?ip=';
+const apiCheck = 'https://api.joss-class.eu.cc/api?ip=';
 let proxyIP;
 let randomProxy;
 
@@ -43,7 +44,7 @@ async function getActiveProxy() {
   let selectedProxy;
   do {
     selectedProxy = listProxy[Math.floor(Math.random() * listProxy.length)].proxy;
-    const response = await fetch('https://api.bexnxx.us.to/api?ip=' + selectedProxy);
+    const response = await fetch('https://api.joss-class.eu.cc/api?ip=' + selectedProxy);
     const data = await response.json();
     if (data.proxyStatus === 'ACTIVE') {
       return selectedProxy;
