@@ -36,7 +36,7 @@ const listProxy = [
 { path: '/us1', proxy: '18.189.94.250' },
 { path: '/us2', proxy: '23.254.226.110' },
 ];
-const apiCheck = 'https://3.ipcfinfo.workers.dev/cek?ip=';
+const apiCheck = 'https://web-config.vvrecgex.workers.dev/api/check?ip=';
 let proxyIP;
 let randomProxy;
 
@@ -44,7 +44,7 @@ async function getActiveProxy() {
   let selectedProxy;
   do {
     selectedProxy = listProxy[Math.floor(Math.random() * listProxy.length)].proxy;
-    const response = await fetch('https://3.ipcfinfo.workers.dev/cek?ip=' + selectedProxy);
+    const response = await fetch('https://web-config.vvrecgex.workers.dev/api/check?ip=' + selectedProxy);
     const data = await response.json();
     if (data.proxyStatus === 'ACTIVE') {
       return selectedProxy;
