@@ -2,14 +2,23 @@
 // @ts-ignore
 import { connect } from 'cloudflare:sockets';
 const listBugs = [
-'kurang? dm https://t.me/+TFI-sffTaTo0Mjll',
 'investor.fb.com.joss-class.eu.cc',
+'help.twitter.com',
+'poe.garena.com',
+'www.udemy.com',
+'graph.facebook.com',
+'ffsupporte.poe.garena.com',
+'live.iflix.com',
+'io.ruangguru.com',
+'data.mt',
+'beta.zoom.us`,
+'ava.game.naver.com',
 'graph.instagram.com',
 'investors.spotify.com',
-'suporte.garena.com',
+'zaintest.vuclip.com',
 'quiz.int.vidio.com',
 'support.zoom.us',
-'joss-class.eu.cc',
+'joss-class.eu.cc'
 ];
 const listProxy = [
 { path: '/id1', proxy: '194.58.56.169' },
@@ -35,8 +44,10 @@ const listProxy = [
 { path: '/nl3', proxy: '24.144.79.45' },
 { path: '/us1', proxy: '18.189.94.250' },
 { path: '/us2', proxy: '23.254.226.110' },
+{ path: '/au1', proxy: '139.99.236.163' },
+{ path: '/ae1', proxy: '193.123.81.105' },
 ];
-const apiCheck = 'https://3.ipcfinfo.workers.dev/cek?ip=';
+const apiCheck = 'https://api.joss-class.eu.cc/api?ip=';
 let proxyIP;
 let randomProxy;
 
@@ -44,7 +55,7 @@ async function getActiveProxy() {
   let selectedProxy;
   do {
     selectedProxy = listProxy[Math.floor(Math.random() * listProxy.length)].proxy;
-    const response = await fetch('https://3.ipcfinfo.workers.dev/cek?ip=' + selectedProxy);
+    const response = await fetch('https://api.joss-class.eu.cc/api?ip=' + selectedProxy);
     const data = await response.json();
     if (data.proxyStatus === 'ACTIVE') {
       return selectedProxy;
@@ -309,11 +320,11 @@ async function getAllConfigVless(hostName) {
 
         const htmlConfigs = `
 <!DOCTYPE html>
-<html lang="en">'
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VLESS | SERVER</title>
+    <title>VLESS | KERKUI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6PCWJ+8zzHcXQjXGp6n5Yh9rX0x5fOdPaOqO+e2X4R5C1aE/BSqPIG+8y3O6APa8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -613,7 +624,7 @@ async function getAllConfigVless(hostName) {
             </ul>
         </div>
     </div>
-    <div class="watermark">© <a href="https://t.me/+TFI-sffTaTo0Mjll" target="_blank">server error</a></div>
+    <div class="watermark">© <a href="https://t.me/cfvless" target="_blank">vless gratis</a></div>
 
     <script>
         function showContent(contentId) {
