@@ -11,7 +11,6 @@ const listBugs = [
 'live.iflix.com',
 'io.ruangguru.com',
 'data.mt',
-'beta.zoom.us`,
 'ava.game.naver.com',
 'graph.instagram.com',
 'investors.spotify.com',
