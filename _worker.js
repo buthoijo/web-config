@@ -52,6 +52,78 @@ async function getActiveProxy() {
   } while (true);
 }
 
+function updateProgress() {
+completedChecks++;
+const progress = (completedChecks / totalProxies) * 100;
+const elapsedTime = (Date.now() - checkStartTime) / 1000;
+const speed = elapsedTime > 0 ? (completedChecks / elapsedTime).toFixed(1) : '0';
+
+document.getElementById('checkedCount').textContent = completedChecks;
+document.getElementById('progressText').textContent = progress.toFixed(1) + '%';
+document.getElementById('progressFill').style.width = progress.toFixed(1) + '%';
+document.getElementById('speed').textContent = speed;
+
+if (completedChecks % 10 === 0 || completedChecks === totalProxies) {
+document.getElementById('active').textContent = active;
+document.getElementById('inactive').textContent = inactive;
+document.getElementById('error').textContent = error;
+document.getElementById('retryCount').textContent = totalRetries;
+}
+}
+
+const checkPromises = rows.map(async (proxyData, index) => {
+if (!isChecking) return;
+
+try {
+const data = await checkProxyWithRetry(proxyData.ip, proxyData.port, proxyData.retryCell, 10);
+if (data.error) {
+proxyData.statusCell.textContent = 'Error';
+proxyData.statusCell.className = 'inactive';
+error++;
+} else if (data.proxyip) {
+proxyData.statusCell.textContent = 'Active';
+proxyData.statusCell.className = 'active';
+active++;
+// Enable generate button for active proxies
+proxyData.actionCell.innerHTML = '<button style="background:#ff0088; padding: 5px 10px; font-size: 10px;" onclick="openAccountModal(\'' + proxyData.ip + '\', \'' + proxyData.port + '\', \'' + (data.countryCode || '') + '\')">🚀 Generate</button>';
+} else {
+proxyData.statusCell.textContent = 'Inactive';
+proxyData.statusCell.className = 'inactive';
+inactive++;
+}
+
+const countryCode = data.countryCode || '';
+const flag = getFlagEmoji(countryCode);
+proxyData.countryCell.textContent = countryCode ? countryCode + ' ' + flag : '-';
+proxyData.countryCell.setAttribute('data-country', countryCode);
+proxyData.ispCell.textContent = data.asOrganization || '-';
+proxyData.protoCell.textContent = data.httpProtocol || '-';
+proxyData.delayCell.textContent = data.delay || '-';
+} catch (e) {
+proxyData.statusCell.textContent = 'Error';
+proxyData.statusCell.className = 'inactive';
+error++;
+}
+
+updateProgress();
+});
+
+await Promise.allSettled(checkPromises);
+
+if (isChecking) {
+const totalTime = ((Date.now() - checkStartTime) / 1000).toFixed(1);
+showStatus('✅ MAX PARALLEL + RETRY COMPLETED! ' + totalProxies + ' proxy checked in ' + totalTime + ' seconds! Active: ' + active + ', Inactive: ' + inactive + ', Error: ' + error + ', Total Retries: ' + totalRetries);
+} else {
+showStatus('⏹️ Checking dihentikan! Active: ' + active + ', Inactive: ' + inactive + ', Error: ' + error + ', Total Retries: ' + totalRetries);
+}
+isChecking = false;
+}
+
+function stopChecking() {
+isChecking = false;
+showStatus('⏹️ Menghentikan checking...', 'error');
+}
+
 async function updateRandomProxy() {
   randomProxy = await getActiveProxy();
 }
