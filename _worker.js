@@ -52,12 +52,9 @@ async function getActiveProxy() {
   } while (true);
 }
 
-{ "status": "", "proxyIP": "", "proxyValid": , "waktu_request": "", "infoIP": { "error": "", "detail": "" }, "creator": "" }
-
 async function updateRandomProxy() {
   randomProxy = await getActiveProxy();
 }
-
 
 export default {
   async fetch(request, ctx) {
