@@ -45,7 +45,10 @@ const listProxy = [
 { path: '/nl3', proxy: '89.110.66.154' },
 { path: '/us1', proxy: '72.13.122.137' },
 { path: '/us2', proxy: '129.159.84.71' },
-{ path: '/us3', proxy: '23.95.113.61' },	
+{ path: '/us3', proxy: '23.95.113.61' },
+{ path: '/au1', proxy: '170.64.152.77' },
+{ path: '/au2', proxy: '152.67.101.72' },
+{ path: '/au3', proxy: '192.9.190.80' },
 ];
 const apiCheck = 'https://3.ipcfinfo.workers.dev/cek?ip=';
 let proxyIP;
