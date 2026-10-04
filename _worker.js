@@ -21,10 +21,10 @@ const listBugs = [
 'kurang? dm t.me/bexnxx',
 ];
 const listProxy = [
-{ path: '/id1', proxy: '194.58.56.169' },
-{ path: '/id2', proxy: '202.10.42.30' },
-{ path: '/id3', proxy: '23.47.197.73' },
-{ path: '/id4', proxy: '35.219.50.99' },
+{ path: '/id1', proxy: '147.139.189.225' },
+{ path: '/id2', proxy: '202.155.95.132' },
+{ path: '/id3', proxy: '36.95.152.58' },
+{ path: '/id4', proxy: '172.232.249.224' },
 { path: '/sg1', proxy: '52.77.110.99' },
 { path: '/sg2', proxy: '167.71.214.234' },
 { path: '/sg3', proxy: '168.138.165.174' },
