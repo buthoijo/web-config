@@ -1,9 +1,13 @@
-Kalau kamu tidak punya Bun, install Bun dulu:
+pada proxy au1, au2, au3" dikarenakan portnya, bukam 443/80, maka di bagian path di exlave apk/ httpcustom apk, dll, harus di ganti seperti ini:
 
-</> Bash
-npm install -g bun
+misal:
+170.64.152.77	 port:7443
+152.67.101.72	port: 23010
+192.9.190.80	port:23862
 
-lalu:
+di ganti di bagian path (jalur websocket):
 
-</> Bash
-bun install
+/vl?192.9.190.80=23862
+
+atau seperti ini path:
+/192.9.190.80=23862
