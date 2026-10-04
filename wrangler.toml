@@ -3,7 +3,7 @@ name = "web-config" # todo
 #main = "test/worker/cf-cdn-cgi-trace2.js"
 #main = "test/worker/worker-connect-test.js"
 main = "_worker.js"
-compatibility_date = "2026-10-4"
+compatibility_date = "2025-12-28"
 
 [vars]
 # UUID = "d342d11e-d424-4583-b36e-524ab1f0afa4"
