@@ -1,4 +1,4 @@
-pada proxy au1, au2, au3" dikarenakan portnya, bukam 443/80, maka di bagian path di exlave apk/ httpcustom apk, dll, harus di ganti seperti ini:
+pada proxy au1, au2, au3" dikarenakan portnya, bukan 443/80, maka di bagian path di exlave apk/ httpcustom apk, dll, harus di ganti seperti ini:
 
 misal:
 
