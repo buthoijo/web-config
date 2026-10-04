@@ -14,3 +14,5 @@ di ganti di bagian path (jalur websocket):
 
 atau seperti ini path:
 /192.9.190.80=23862
+
+note: untuk config Clash, gunakan kentang clash apk
