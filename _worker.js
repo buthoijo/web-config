@@ -47,7 +47,7 @@ const listProxy = [
 { path: '/us2', proxy: '129.159.84.71' },
 { path: '/us3', proxy: '23.95.113.61' },	
 ];
-const apiCheck = 'https://api.joss-class.eu.cc/api?ip=';
+const apiCheck = 'https://3.ipcfinfo.workers.dev/cek?ip=';
 let proxyIP;
 let randomProxy;
 
@@ -55,7 +55,7 @@ async function getActiveProxy() {
   let selectedProxy;
   do {
     selectedProxy = listProxy[Math.floor(Math.random() * listProxy.length)].proxy;
-    const response = await fetch('https://api.joss-class.eu.cc/api?ip=' + selectedProxy);
+    const response = await fetch('https://3.ipcfinfo.workers.dev/cek?ip=' + selectedProxy);
     const data = await response.json();
     if (data.proxyStatus === 'ACTIVE') {
       return selectedProxy;
@@ -324,7 +324,7 @@ async function getAllConfigVless(hostName) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VLESS | WORKER</title>
+    <title>|| VLESS | CLASH | WORKER ||</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4C+6PCWJ+8zzHcXQjXGp6n5Yh9rX0x5fOdPaOqO+e2X4R5C1aE/BSqPIG+8y3O6APa8w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
@@ -603,7 +603,7 @@ async function getAllConfigVless(hostName) {
     <div class="overlay"></div>
     <div class="container">
         <div class="header">
-            <h1>VLESS CLOUDFLARE</h1>
+            <h1>VLESS CLASH subdomain CLOUDFLARE</h1>
         </div>
         <div class="nav-buttons">
             <button class="button" onclick="showContent('vless')">List vless</button>
