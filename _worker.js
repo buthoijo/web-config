@@ -18,7 +18,7 @@ const listBugs = [
 'quiz.int.vidio.com',
 'support.zoom.us',
 'joss-class.eu.cc',
-'kurang? dm t.me/bexnxx',
+'https://t.me/CFVPN_Kuncung',
 ];
 const listProxy = [
 { path: '/id1', proxy: '147.139.189.225' },
@@ -36,14 +36,16 @@ const listProxy = [
 { path: '/jp2', proxy: '168.138.46.67' },
 { path: '/jp3', proxy: '138.2.18.82' },
 { path: '/jp4', proxy: '103.75.118.144' },
-{ path: '/ge1', proxy: '212.192.31.162' },
-{ path: '/ge2', proxy: '5.42.106.225' },
-{ path: '/ge3', proxy: '18.192.93.64' },
-{ path: '/nl1', proxy: '217.196.100.40' },
-{ path: '/nl2', proxy: '2.59.183.223' },
-{ path: '/nl3', proxy: '24.144.79.45' },
-{ path: '/us1', proxy: '18.189.94.250' },
-{ path: '/us2', proxy: '23.254.226.110' },
+{ path: '/ch1', proxy: '38.180.85.203' },
+{ path: '/ch2', proxy: '91.245.225.69' },
+{ path: '/in1', proxy: '216.10.243.159' },
+{ path: '/in2', proxy: '20.235.105.146' },	
+{ path: '/nl1', proxy: '94.241.174.229' },
+{ path: '/nl2', proxy: '46.17.102.93' },
+{ path: '/nl3', proxy: '89.110.66.154' },
+{ path: '/us1', proxy: '72.13.122.137' },
+{ path: '/us2', proxy: '129.159.84.71' },
+{ path: '/us3', proxy: '23.95.113.61' },	
 ];
 const apiCheck = 'https://api.joss-class.eu.cc/api?ip=';
 let proxyIP;
