@@ -1170,3 +1170,16 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 		}
 	};
 }
+
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  try {
+    // Kode logika Anda di sini
+    return new Response('Hello World', { status: 200 })
+  } catch (err) {
+    return new Response('Terjadi kesalahan: ' + err.message, { status: 500 })
+  }
+}
