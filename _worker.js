@@ -868,6 +868,18 @@ async function vlessOverWSHandler(request) {
 		webSocket: client,
 	});
 }
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request))
+})
+
+async function handleRequest(request) {
+  try {
+    // Kode logika Anda di sini
+    return new Response('Hello World', { status: 200 })
+  } catch (err) {
+    return new Response('Terjadi kesalahan: ' + err.message, { status: 500 })
+  }
+}
 
 async function handleTCPOutBound(remoteSocket, addressRemote, portRemote, rawClientData, webSocket, vlessResponseHeader, log,) {
 	async function connectAndWrite(address, port) {
@@ -1169,17 +1181,4 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
 			writer.write(chunk);
 		}
 	};
-}
-
-addEventListener('fetch', event => {
-  event.respondWith(handleRequest(event.request))
-})
-
-async function handleRequest(request) {
-  try {
-    // Kode logika Anda di sini
-    return new Response('Hello World', { status: 200 })
-  } catch (err) {
-    return new Response('Terjadi kesalahan: ' + err.message, { status: 500 })
-  }
 }
