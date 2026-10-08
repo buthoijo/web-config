@@ -1338,7 +1338,7 @@ function generateUUIDv4() {
             
 <hr class="config-divider" />
 `;
-        let bugList = listBugs.map((bug, index) => `<li><span class="domain-number">${index + 1}</span> ${bug} <button class="button" onclick='copyToClipboard("${bug}")'><i class="fa fa-clipboard"></i>Copy</button></li>`).join('');
+        let bugList = listBugs.map((bug, index) => `<li><span class="domain-number">{index + 1}</span> {bug} <button class="button" onclick='copyToClipboard("${bug}")'><i class="fa fa-clipboard"></i>Copy</button></li>`).join('');
         const htmlConfigs = `
 <!DOCTYPE html>
 <html lang="en">
