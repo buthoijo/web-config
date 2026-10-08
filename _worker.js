@@ -1158,7 +1158,7 @@ async function getAllConfigVless(hostName) {
                     document.createElement('div');
 
                   alertBox.textContent =
-                    `Proxy Status: ${proxyStatus}`;
+                  \`Proxy Status: \${proxyStatus}\`;
 
                   alertBox.style.position = 'fixed';
                   alertBox.style.bottom = '20px';
